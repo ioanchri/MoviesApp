@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         var button =findViewById<Button>(R.id.btn_test)
         button.setOnClickListener{
             var intent = Intent(this, RecyclerActivity::class.java)
-           // var intent = Intent(this, ServerActivity::class.java)
+          //  var intent = Intent(this, ServerActivity::class.java)
 
             startActivity(intent)
         }

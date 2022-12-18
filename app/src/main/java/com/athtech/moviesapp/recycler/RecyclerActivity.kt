@@ -45,15 +45,15 @@ class RecyclerActivity : AppCompatActivity() {
 
         val queue = Volley.newRequestQueue(this)
     val endpoint = "https://api.themoviedb.org/3/movie/top_rated?api_key=3e7ab9723e9ad4ef5a4424fb8dbdc2d7&language=en-US"
-     //   val endpoint = "https://api.publicapis.org/entries"
+    //    val endpoint = "https://api.publicapis.org/entries"
         val stringRequest = StringRequest(endpoint,
             object : Response.Listener<String> {
                 override fun onResponse(response: String?) {
                     val jsonResponse = Gson().fromJson(response, JsonResponse::class.java)
 
                     var dataList = mutableListOf<ListData>()
-                    jsonResponse.entries.forEach {
-                        var row = ListData(it.overview,it.title)
+                    jsonResponse.results.forEach {
+                        var row = ListData(it.title,it.release_date)
                         dataList.add(row)
                     }
                     var recyclerView = findViewById<RecyclerView>(R.id.recyclerView)

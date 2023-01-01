@@ -16,6 +16,9 @@ class ServerActivity : AppCompatActivity() {
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
 
+        // Initialize the SearchViewCompat and set a listener for search queries
+
+
         val queue = Volley.newRequestQueue(this)
         val endpoint = "https://api.themoviedb.org/3/movie/top_rated?api_key=3e7ab9723e9ad4ef5a4424fb8dbdc2d7&language=en-US"
       //  val endpoint = "https://api.publicapis.org/entries"

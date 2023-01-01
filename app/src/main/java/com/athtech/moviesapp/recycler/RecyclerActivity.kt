@@ -22,13 +22,13 @@ class RecyclerActivity : AppCompatActivity() {
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
 
-        var recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
-
-        findViewById<Button>(R.id.recyclerView_btn).setOnClickListener {
-            recyclerView.adapter = RecyclerAdapter(
-                this, getArrayData()
-            )
-        }
+//        var recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+//
+//        findViewById<Button>(R.id.recyclerView_btn).setOnClickListener {
+//            recyclerView.adapter = RecyclerAdapter(
+//                this, getArrayData()
+//            )
+//        }
     }
 
     private fun getArrayData(): List<String> {

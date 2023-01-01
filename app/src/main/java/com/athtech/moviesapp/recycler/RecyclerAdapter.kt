@@ -9,6 +9,7 @@ import com.athtech.moviesapp.R
 
 class RecyclerAdapter : RecyclerView.Adapter<RecyclerHolder> {
 
+
     private var dataList: List<String>
     private var context: Context
 
@@ -22,6 +23,8 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerHolder> {
         val view: View = LayoutInflater.from(context).inflate(R.layout.holder_item, parent, false)
         return RecyclerHolder(view)
     }
+
+
 
     override fun onBindViewHolder(holder: RecyclerHolder, position: Int) {
         holder.bind(dataList.get(position))

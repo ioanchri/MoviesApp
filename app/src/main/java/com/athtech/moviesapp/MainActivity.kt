@@ -12,24 +12,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
 
 
         var intent = Intent(this, RecyclerActivity::class.java)
         startActivity(intent)
-
-//        var button =findViewById<Button>(R.id.btn_test)
-//        button.setOnClickListener{
-//            var intent = Intent(this, RecyclerActivity::class.java)
-//          //  var intent = Intent(this, ServerActivity::class.java)
-//
-//            startActivity(intent)
-//        }
-
-
-
 
     }
 

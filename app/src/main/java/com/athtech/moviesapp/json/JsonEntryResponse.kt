@@ -3,7 +3,6 @@ package com.athtech.moviesapp.json
 
 class JsonEntryResponse {
 
-    var API: String = ""
     var backdrop_path: String = ""
     var release_date: String = ""
     var title: String = ""

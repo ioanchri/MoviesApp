@@ -15,7 +15,5 @@ class RecyclerHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var textView = itemView.findViewById<TextView>(R.id.holder_text)
         textView.setText(data)
 
-        var imageView = itemView.findViewById<ImageView>(R.id.holder_img)
-
     }
 }

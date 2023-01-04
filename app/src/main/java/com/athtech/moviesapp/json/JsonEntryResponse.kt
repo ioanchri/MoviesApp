@@ -8,7 +8,5 @@ class JsonEntryResponse {
     var title: String = ""
     var vote_average: Number = 0
     var overview: String = ""
-    var HTTPS: Boolean = false
-    var Description: String = ""
-    var Category: String = ""
+    var poster_path: String = ""
 }

@@ -7,6 +7,8 @@
     android:paddingRight="@dimen/corner_space"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".recycler.RecyclerActivity">
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,15 +24,6 @@
         android:layout_height="wrap_content"
         />
 
-    <Button
-        android:id="@+id/btn_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Top Rated movies!"
-        />
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
@@ -38,19 +31,6 @@
         android:layout_weight="1"
         android:orientation="vertical"
         tools:listitem="@layout/holder_item" />
-
-
-
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/recyclerView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_weight="1"-->
-<!--        android:orientation="vertical"-->
-<!--        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
-<!--        tools:listitem="@layout/holder_item" />-->
-
-
 
 
 </LinearLayout>

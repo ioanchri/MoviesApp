@@ -14,11 +14,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
-
-
         var intent = Intent(this, RecyclerActivity::class.java)
         startActivity(intent)
-
     }
 
 

@@ -1,14 +1,24 @@
 package com.athtech.moviesapp.recycler
 
 class ListData {
-    val value1: String
-    val value2: String
-    val value3: String
+    val movieTitle: String
+    val movieRelease: String
+    val movieBackdrop: String
+    val movieRating: String
+    val movieOverview: String
+    val moviePoster: String
 
-    constructor(value1: String, value2: String, value3: String) {
-        this.value1 = value1
-        this.value2 = value2
-        this.value3 = value3
-    }
+
+
+    constructor(movieTitle: String, movieRelease: String, movieBackdrop: String, movieRating: String, movieOverview: String, moviePoster: String) {
+        this.movieTitle = movieTitle
+        this.movieRelease = movieRelease
+        this.movieBackdrop = movieBackdrop
+        this.movieRating = movieRating
+        this.movieOverview = movieOverview
+        this.moviePoster = moviePoster
+     }
+
+
 
 }

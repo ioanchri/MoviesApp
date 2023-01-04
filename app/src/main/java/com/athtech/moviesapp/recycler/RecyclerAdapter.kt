@@ -9,13 +9,10 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.athtech.moviesapp.MovieActivity
 import com.athtech.moviesapp.R
-import com.bumptech.glide.Glide
 
 class  RecyclerAdapter : RecyclerView.Adapter<RecyclerHolder> {
 
-    var onItemCliCk : ((MovieActivity) -> Unit) ? =null
 
     private var dataList: List<String>
     private var context: Context
@@ -30,13 +27,8 @@ class  RecyclerAdapter : RecyclerView.Adapter<RecyclerHolder> {
         return RecyclerHolder(view)
     }
 
-
     override fun onBindViewHolder(holder: RecyclerHolder, position: Int) {
         holder.bind(dataList.get(position))
-
-//        holder.itemView.setOnClickListener{
-//         onItemCliCk?.invoke(MovieActivity())
-//        }
 
 
     }
@@ -44,6 +36,5 @@ class  RecyclerAdapter : RecyclerView.Adapter<RecyclerHolder> {
     override fun getItemCount(): Int {
         return dataList.size
     }
-
 
 }

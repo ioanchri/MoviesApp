@@ -11,9 +11,7 @@ import com.android.volley.VolleyError
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.athtech.moviesapp.DetailActivity
-import com.athtech.moviesapp.MovieActivity
 import com.athtech.moviesapp.R
-import com.athtech.moviesapp.json.JsonEntryResponse
 import com.athtech.moviesapp.json.JsonResponse
 import com.google.gson.Gson
 
@@ -42,8 +40,9 @@ class RecyclerActivity : AppCompatActivity() {
 
         val queue = Volley.newRequestQueue(this)
         val endpoint =
-            "https://api.themoviedb.org/3/movie/top_rated?api_key=3e7ab9723e9ad4ef5a4424fb8dbdc2d7&language=en-US"
-        val endpointBackdrop = "https://themoviedb.org/t/p/w342"
+            //    "https://api.themoviedb.org/3/movie/top_rated?api_key=3e7ab9723e9ad4ef5a4424fb8dbdc2d7&language=en-US"
+            "https://api.themoviedb.org/3/movie/popular?api_key=3e7ab9723e9ad4ef5a4424fb8dbdc2d7&language=en-US"
+        val endpointPhotos = "https://themoviedb.org/t/p/w342"
 
         val stringRequest = StringRequest(endpoint,
             object : Response.Listener<String> {
@@ -55,10 +54,10 @@ class RecyclerActivity : AppCompatActivity() {
                         var row = ListData(
                             it.title,
                             it.release_date,
-                            endpointBackdrop + it.backdrop_path,
+                            endpointPhotos + it.backdrop_path,
                             it.vote_average.toString(),
                             it.overview,
-                            it.poster_path
+                            endpointPhotos + it.poster_path
                         )
                         dataList.add(row)
                     }
@@ -76,16 +75,10 @@ class RecyclerActivity : AppCompatActivity() {
                                 intent.putExtra("overview", data.movieOverview)
                                 intent.putExtra("backdrop_image", data.movieBackdrop)
                                 intent.putExtra("poster_image", data.moviePoster)
-                                intent.putExtra("vote_average",data.movieRating)
+                                intent.putExtra("vote_average", data.movieRating)
 
                                 startActivity(intent)
 
-//                                val intent =
-//                                    Intent(this@RecyclerActivity, DetailActivity::class.java)
-//                                val resultParameters = Bundle()
-//                                resultParameters.putString("title", data.movieTitle , "release_date", data.movieRelease)
-//                                intent.putExtra("title", data.movieTitle)
-//                                startActivity(intent)
                             }
                         })
                 }

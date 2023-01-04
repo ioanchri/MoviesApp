@@ -14,7 +14,8 @@ class DetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail)
 
 
-        val imageView = findViewById<ImageView>(R.id.mPoster)
+        val imageView = findViewById<ImageView>(R.id.mBackdrop)
+        val imageView2 = findViewById<ImageView>(R.id.mPoster)
         val rating_tv = findViewById<TextView>(R.id.mRating)
         val title_tv = findViewById<TextView>(R.id.mTitle)
         val overview_tv = findViewById<TextView>(R.id.mOverview)
@@ -24,18 +25,21 @@ class DetailActivity : AppCompatActivity() {
 
         val bundle = intent.extras
         val mTitle = bundle!!.getString("title")
-        val mPoster = bundle.getString("backdrop_image")
+        val mBackdrop = bundle.getString("backdrop_image")
         val mOverView = bundle.getString("overview")
         val mRating = bundle.getString("vote_average")
         val mCasting = bundle.getString("casting")
         val mRelease = bundle.getString("release_date")
+        val mPoster = bundle.getString("poster_image")
 
-        Glide.with(this).load(mPoster).into(imageView)
+        Glide.with(this).load(mBackdrop).into(imageView)
+        Glide.with(this).load(mPoster).into(imageView2)
         rating_tv.text = mRating
         title_tv.text = mTitle
         overview_tv.text = mOverView
         casting_tv.text = mCasting
         release_tv.text = mRelease
+
 
     }
 

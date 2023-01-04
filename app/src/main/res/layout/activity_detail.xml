@@ -12,7 +12,7 @@
     <ImageView
         android:id="@+id/mPoster"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         android:layout_gravity="center"
         tools:src="@drawable/ic_launcher_background"
         />
@@ -124,6 +124,13 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/mBackdrop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        tools:src="@drawable/ic_launcher_background"
+        />
 
 
 

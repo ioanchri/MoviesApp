@@ -1,6 +1,5 @@
 package com.athtech.moviesapp.recycler
 
-import android.content.Intent
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
@@ -8,7 +7,6 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.athtech.moviesapp.MovieActivity
 import com.athtech.moviesapp.R
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop

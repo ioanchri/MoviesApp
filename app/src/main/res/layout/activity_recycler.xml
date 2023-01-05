@@ -5,31 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".recycler.RecyclerActivity">
-
+    tools:context=".recycler.RecyclerActivity"
+    android:background="@color/holder">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="16dp"
-        android:text="Movies List - TMDB"
-        android:textColor="@color/black" />
+        android:text="Movies List "
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        />
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="4dp" />
 
-    <SearchView
+    <androidx.appcompat.widget.SearchView
         android:id="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/teal_200"
-        android:queryHint="Search for movies!" />
+        android:queryHint="Search for movies!"
+        app:iconifiedByDefault="false"/>
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="4dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="1dp"
         android:layout_weight="1"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/holder_item" />
-
-
 </LinearLayout>

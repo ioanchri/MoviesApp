@@ -12,7 +12,7 @@ class RecyclerHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
 
     fun bind(data: String) {
-        var textView = itemView.findViewById<TextView>(R.id.holder_text)
+        var textView = itemView.findViewById<TextView>(R.id.holder_title)
         textView.setText(data)
 
     }

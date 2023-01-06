@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".recycler.RecyclerActivity">
+    tools:context=".recycler.RecyclerActivity"
+    android:background="@drawable/background">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,34 +16,26 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/title"
-            android:gravity="center"
             android:padding="16dp"
             android:text="Movies List "
+            android:textStyle="bold"
             android:textColor="@color/white"
+            android:background="@android:color/transparent"
             android:textSize="18sp"
-            android:layout_weight="3" />
-
-<!--        <Space-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="4dp" />-->
+            android:layout_weight="3"
+            />
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:background="@drawable/background"
-            android:backgroundTint="@color/title"
-            android:foregroundTint="@color/title"
+            android:background="@android:color/transparent"
             app:queryBackground="@color/white"
             app:iconifiedByDefault="true"
             android:layoutDirection="rtl"
             />
 
-        <!--        <Space-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="4dp" />-->
 
     </LinearLayout>
 

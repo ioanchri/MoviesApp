@@ -1,7 +1,5 @@
 package com.athtech.moviesapp.recycler
 
-import com.athtech.moviesapp.json.JsonEntryResponseCasting
-
 class ListData {
     val movieTitle: String
     val movieRelease: String
@@ -10,10 +8,20 @@ class ListData {
     val movieOverview: String
     val moviePoster: String
     val movieId: String
+    val movieCasting: String
 
 
 
-    constructor(movieTitle: String, movieRelease: String, movieBackdrop: String, movieRating: String, movieOverview: String, moviePoster: String, movieId: String) {
+    constructor(
+        movieTitle: String,
+        movieRelease: String,
+        movieBackdrop: String,
+        movieRating: String,
+        movieOverview: String,
+        moviePoster: String,
+        movieId: String,
+        movieCasting: String
+    ) {
         this.movieTitle = movieTitle
         this.movieRelease = movieRelease
         this.movieBackdrop = movieBackdrop
@@ -21,6 +29,7 @@ class ListData {
         this.movieOverview = movieOverview
         this.moviePoster = moviePoster
         this.movieId = movieId
+        this.movieCasting = movieCasting
      }
 
     class ListData2 {

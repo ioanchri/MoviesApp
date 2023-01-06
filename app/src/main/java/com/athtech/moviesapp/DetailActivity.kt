@@ -26,7 +26,7 @@ class DetailActivity : AppCompatActivity() {
         val mBackdrop = bundle.getString("backdrop_image")
         val mOverView = bundle.getString("overview")
         val mRating = bundle.getString("vote_average")
-        val mCasting = bundle.getString("casting")
+        val mCasting = bundle.getString("original_name")
         val mRelease = bundle.getString("release_date")
         val mPoster = bundle.getString("poster_image")
 

@@ -16,8 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            tools:src="@drawable/ic_launcher_background"
-            android:src="@mipmap/ic_launcher"/>
+            android:src="@mipmap/ic_launcher"
+            tools:src="@drawable/ic_launcher_background" />
 
         <TextView
             android:id="@+id/Title"
@@ -27,6 +27,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:text="Title"
+            android:textAlignment="center"
+            android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="10sp" />
 
@@ -37,6 +39,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:text="Title of movie"
+            android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -49,6 +52,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:text="Release date"
+            android:textAlignment="center"
+            android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="10sp" />
 
@@ -59,6 +64,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:text="20-11-22"
+            android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -71,6 +77,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:text="Rating"
+            android:textAlignment="center"
+            android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="10sp" />
 
@@ -81,6 +89,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:text="5 stars"
+            android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -93,6 +102,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:text="Casting"
+            android:textAlignment="center"
+            android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="10sp" />
 
@@ -103,6 +114,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:text="Test 1 Test 2"
+            android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -114,13 +126,12 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
-            android:text="Description"
-            android:textStyle=""
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textAlignment="center"
             android:paddingBottom="5dp"
-            />
+            android:text="Description"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/mOverview"
@@ -130,8 +141,7 @@
             android:layout_marginRight="20dp"
             android:text="Blablablablabla"
             android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textSize="20sp" />
 
         <Space
             android:layout_width="match_parent"
@@ -140,21 +150,21 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="POSTER IMAGE"
+            android:paddingBottom="5dp"
+            android:text="poster image"
             android:textAlignment="center"
+            android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:paddingBottom="5dp"
-            />
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/mBackdrop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            tools:src="@drawable/ic_launcher_background"
-            android:src="@mipmap/ic_launcher"/>
+            android:src="@mipmap/ic_launcher"
+            tools:src="@drawable/ic_launcher_background" />
 
     </LinearLayout>
 </ScrollView>

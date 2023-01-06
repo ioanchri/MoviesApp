@@ -1,11 +1,14 @@
 package com.athtech.moviesapp.recycler
 
+import android.content.ClipData
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.SearchView
+import android.widget.SearchView.OnQueryTextListener
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.VolleyError
 import com.android.volley.toolbox.StringRequest
@@ -19,6 +22,11 @@ import com.athtech.moviesapp.json.JsonResponseCasting
 import com.google.gson.Gson
 
 
+//lateinit var searchView: SearchView
+//private var itemList: List<ClipData.Item>? = null
+
+
+
 
 class RecyclerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +36,24 @@ class RecyclerActivity : AppCompatActivity() {
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
+
+
+//        searchView.findViewById<SearchView>(R.id.search_view)
+//        searchView.clearFocus()
+//        searchView.setOnQueryTextListener(object:OnQueryTextListener{
+//            override fun onQueryTextSubmit(query: String): Boolean {
+//
+//                return false
+//            }
+//
+//            override fun onQueryTextChange(newText: String): Boolean {
+//                // Update the search results as the query changes
+//                searchMovies(newText)
+//                return true
+//            }
+//
+//    })
+
 
     }
 
@@ -42,19 +68,18 @@ class RecyclerActivity : AppCompatActivity() {
             "https://api.themoviedb.org/3/movie/popular?api_key=3e7ab9723e9ad4ef5a4424fb8dbdc2d7&language=en-US"
         val endpointPhotos = "https://themoviedb.org/t/p/w342"
 
-      //  val endpointCasting =
-        //    "https://api.themoviedb.org/3/movie/{${JsonEntryResponse}}/credits?api_key=3e7ab9723e9ad4ef5a4424fb8dbdc2d7&language=en-US"
+     //   val endpointCasting =
+       //     "https://api.themoviedb.org/3/movie/$movieID/credits?api_key=3e7ab9723e9ad4ef5a4424fb8dbdc2d7&language=en-US"
 
         val stringRequest = StringRequest(endpoint,
             object : Response.Listener<String> {
                 override fun onResponse(response: String?) {
                     val jsonResponse = Gson().fromJson(response, JsonResponse::class.java)
-                    val jsonResponseCasting = Gson().fromJson(response, JsonResponseCasting::class.java)
+                    val jsonResponseCasting =
+                        Gson().fromJson(response, JsonResponseCasting::class.java)
                     var dataList2 = mutableListOf<ListData.ListData2>()
 
- //                   val movieID = ListData.movieId
-
-                    jsonResponseCasting.cast.forEach{
+                    jsonResponseCasting.cast.forEach {
                         var row2 = ListData.ListData2(
                             it.original_name
                         )
@@ -63,6 +88,8 @@ class RecyclerActivity : AppCompatActivity() {
 
                     var dataList = mutableListOf<ListData>()
                     jsonResponse.results.forEach {
+
+
                         var row = ListData(
                             it.title,
                             it.release_date,
@@ -72,6 +99,7 @@ class RecyclerActivity : AppCompatActivity() {
                             endpointPhotos + it.poster_path,
                             it.id.toString()
                         )
+                        var movieID = it.id.toString()
                         dataList.add(row)
                     }
 
@@ -92,12 +120,10 @@ class RecyclerActivity : AppCompatActivity() {
                                 intent.putExtra("poster_image", data.moviePoster)
                                 intent.putExtra("vote_average", data.movieRating)
                                 intent.putExtra("id", data.movieId)
-        //                        intent.putExtra("casting", movieID.toString())
+                           //     intent.putExtra("casting", data.movieCasting2)
 
                                 startActivity(intent)
                             }
-
-
                         })
                 }
             }, object : Response.ErrorListener {
@@ -109,4 +135,15 @@ class RecyclerActivity : AppCompatActivity() {
         queue.add(stringRequest)
     }
 
+//    private fun searchMovies(text: String) {
+//        var dataList3 = mutableListOf<ClipData.Item>()
+//
+//
+//    }
+
 }
+
+
+
+
+

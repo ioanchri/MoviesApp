@@ -32,7 +32,7 @@ class DetailActivity : AppCompatActivity() {
 
         Glide.with(this).load(mBackdrop).into(imageView)
         Glide.with(this).load(mPoster).into(imageView2)
-        rating_tv.text = mRating
+        rating_tv.text = mRating + "/10"
         title_tv.text = mTitle
         overview_tv.text = mOverView
         casting_tv.text = mCasting

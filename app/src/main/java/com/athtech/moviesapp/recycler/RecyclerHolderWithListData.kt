@@ -20,7 +20,7 @@ class RecyclerHolderWithListData(itemView: View) : RecyclerView.ViewHolder(itemV
         var textView2 = itemView.findViewById<TextView>(R.id.holder_release)
         textView2.setText("Released at: " + data.movieRelease)
         var textView3 = itemView.findViewById<TextView>(R.id.holder_rating)
-        textView3.setText("Rating: " + data.movieRating  + " " + data.movieId)
+        textView3.setText("Rating: " + data.movieRating + "/10")
         var textView4 = itemView.findViewById<TextView>(R.id.holder_overview)
         textView4.setText("Overview: " + data.movieOverview)
 
@@ -38,7 +38,6 @@ class RecyclerHolderWithListData(itemView: View) : RecyclerView.ViewHolder(itemV
 
         var imageView = itemView.findViewById<ImageView>(R.id.holder_img)
         val URL = data.movieBackdrop
-
         Glide.with(itemView)
             .load(URL)
             .transform(CenterCrop())

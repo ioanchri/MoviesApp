@@ -6,7 +6,7 @@
     android:layout_marginBottom="2dp"
     android:clickable="true"
     android:orientation="horizontal"
-    android:background="@color/holder"
+    android:background="@drawable/background"
     >
 
     <ImageView

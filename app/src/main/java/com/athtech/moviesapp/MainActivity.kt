@@ -8,7 +8,12 @@ import android.widget.SearchView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+import com.athtech.moviesapp.json.JsonResponse
 import com.athtech.moviesapp.recycler.RecyclerActivity
+import com.google.gson.Gson
 
 
 class MainActivity : AppCompatActivity() {
@@ -22,28 +27,43 @@ class MainActivity : AppCompatActivity() {
         var intent = Intent(this, RecyclerActivity::class.java)
         startActivity(intent)
 
-        val searchView = findViewById<SearchView>(R.id.search_view)
-        searchView.clearFocus()
-        searchView.setOnSearchClickListener {
-            searchView.isIconified = false
-        }
-
-
-        searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
-             override fun onQueryTextSubmit(query: String): Boolean {
-
-                return false
-            }
-
-            override fun onQueryTextChange(newText: String): Boolean {
-                // Update the search results as the query changes
-        //        searchMovies(newText)
-                return true
-            }
-
-    })
-
+//        val searchView = findViewById<SearchView>(R.id.search_view)
+//        searchView.clearFocus()
+//        searchView.setOnSearchClickListener {
+//            searchView.isIconified = false
+//        }
+//
+//        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+//            override fun onQueryTextSubmit(query: String): Boolean {
+//                searchMovies(query)
+//                return true
+//            }
+//
+//            override fun onQueryTextChange(newText: String): Boolean {
+//                searchMovies(newText)
+//                return true
+//            }
+//        })
     }
+
+//    fun searchMovies(query: String) {
+//        val queue = Volley.newRequestQueue(this)
+//        val SearchUrl = "https://api.themoviedb.org/3/search/movie?api_key=3e7ab9723e9ad4ef5a4424fb8dbdc2d7&language=en-US&query=$query&page=1&include_adult=false"
+//
+//        val searchRequest = StringRequest(SearchUrl,
+//            Response.Listener<String> { response ->
+//                // Parse the response and update the list of movies
+//                val jsonResponse = Gson().fromJson(response, JsonResponse::class.java)
+//                val movies = jsonResponse.results
+//                // Update the adapter with the new list of movies
+//            },
+//            Response.ErrorListener { error ->
+//                // Handle error
+//            }
+//        )
+//        queue.add(searchRequest)
+//    }
+
 
 //    private fun searchMovies(text: String) {
 //      //  private fun filter(text: String) {

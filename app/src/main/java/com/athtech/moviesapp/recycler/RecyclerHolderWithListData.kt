@@ -12,9 +12,8 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop
 
 class RecyclerHolderWithListData(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-    fun bind(data: ListData, listener: com.athtech.moviesapp.recycler.OnItemClickListener) {
-      //  var textView = itemView.findViewById<TextView>(R.id.holder_text)
-     //   textView.setText("Title: " + data.movieTitle + System.lineSeparator() + "Release Date: " + data.movieRelease + System.lineSeparator() + "Rating: " + data.movieRating + System.lineSeparator() + "Overview: " + data.movieOverview)
+    fun bind(data: ListData, listener: OnItemClickListener) {
+
         var textView = itemView.findViewById<TextView>(R.id.holder_title)
         textView.setText(data.movieTitle)
         var textView2 = itemView.findViewById<TextView>(R.id.holder_release)
@@ -24,17 +23,12 @@ class RecyclerHolderWithListData(itemView: View) : RecyclerView.ViewHolder(itemV
         var textView4 = itemView.findViewById<TextView>(R.id.holder_overview)
         textView4.setText("Overview: " + data.movieOverview)
 
-
-
-
-
-        itemView.findViewById<LinearLayout>(R.id.holder_container).setOnClickListener(object:View.OnClickListener{
-            override fun onClick(v: View?) {
-                Log.d("Holder", "user Pressed the row ${data.movieRelease}" + data)
-                listener.onClick(data)
-            }
-
-        })
+        itemView.findViewById<LinearLayout>(R.id.holder_container)
+            .setOnClickListener(object : View.OnClickListener {
+                override fun onClick(v: View?) {
+          //          Log.d("Holder", "user Pressed the row ${data.movieRelease}" + data)
+                    listener.onClick(data) }
+            })
 
         var imageView = itemView.findViewById<ImageView>(R.id.holder_img)
         val URL = data.movieBackdrop

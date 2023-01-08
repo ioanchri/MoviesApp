@@ -1,6 +1,5 @@
 package com.athtech.moviesapp.json
 
-import com.athtech.moviesapp.recycler.ListData
 
 
 class JsonEntryResponse {
@@ -12,6 +11,12 @@ class JsonEntryResponse {
     var vote_average: Number = 0
     var overview: String = ""
     var poster_path: String = ""
+ //   var original_name: String = ""
+
+}
+
+class JsonCastingResponse {
+
     var original_name: String = ""
 
 }

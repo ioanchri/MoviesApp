@@ -13,12 +13,16 @@ class RecyclerAdapterWithListData : RecyclerView.Adapter<RecyclerHolderWithListD
     private var dataList: List<ListData>
     private var context: Context
     private var listener: OnItemClickListener
+    private val inflater: LayoutInflater
 
 
-    constructor(context: Context, dataList: List<ListData>,listener: OnItemClickListener) {
+
+
+    constructor(context: Context, dataList: List<ListData>, listener: OnItemClickListener) {
         this.dataList = dataList
         this.context = context
         this.listener = listener
+        this.inflater = LayoutInflater.from(context)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerHolderWithListData {
@@ -27,13 +31,15 @@ class RecyclerAdapterWithListData : RecyclerView.Adapter<RecyclerHolderWithListD
     }
 
     override fun onBindViewHolder(holder: RecyclerHolderWithListData, position: Int) {
-        holder.bind(dataList.get(position),listener)
+
+        holder.bind(dataList.get(position), listener)
     }
 
 
     override fun getItemCount(): Int {
         return dataList.size
     }
+
 
 
 }

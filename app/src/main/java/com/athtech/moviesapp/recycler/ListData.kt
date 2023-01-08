@@ -1,5 +1,6 @@
 package com.athtech.moviesapp.recycler
 
+
 class ListData {
     val movieTitle: String
     val movieRelease: String
@@ -8,9 +9,7 @@ class ListData {
     val movieOverview: String
     val moviePoster: String
     val movieId: String
-    val movieCasting: String
-
-
+    val movieCasting: MutableList<String>?
 
     constructor(
         movieTitle: String,
@@ -20,7 +19,7 @@ class ListData {
         movieOverview: String,
         moviePoster: String,
         movieId: String,
-        movieCasting: String
+        movieCasting: MutableList<String>,
     ) {
         this.movieTitle = movieTitle
         this.movieRelease = movieRelease
@@ -30,17 +29,16 @@ class ListData {
         this.moviePoster = moviePoster
         this.movieId = movieId
         this.movieCasting = movieCasting
-     }
-
-    class ListData2 {
-        val movieCasting: String
-
-
-        constructor(movieCasting: String){
-        this.movieCasting = movieCasting}
     }
 
+    class ListData2 {
 
+        var movieCasting: String
 
+        constructor(movieCasting: String) {
+            this.movieCasting = movieCasting
+        }
 
-}
+    }
+
+    }

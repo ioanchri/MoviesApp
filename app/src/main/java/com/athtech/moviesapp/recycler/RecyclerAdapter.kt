@@ -1,13 +1,10 @@
 package com.athtech.moviesapp.recycler
 
 import android.content.Context
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.RelativeLayout
-import android.widget.TextView
+
 import androidx.recyclerview.widget.RecyclerView
 import com.athtech.moviesapp.R
 
@@ -37,4 +34,8 @@ class  RecyclerAdapter : RecyclerView.Adapter<RecyclerHolder> {
         return dataList.size
     }
 
+    fun setDataList(dataList: List<String>) {
+        this.dataList = dataList
+        notifyDataSetChanged()
+    }
 }

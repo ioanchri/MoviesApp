@@ -13,27 +13,30 @@ import com.google.gson.Gson
 
 class ServerActivity : AppCompatActivity() {
 
-    override fun onPostCreate(savedInstanceState: Bundle?) {
-        super.onPostCreate(savedInstanceState)
+//    override fun onPostCreate(savedInstanceState: Bundle?) {
+//        super.onPostCreate(savedInstanceState)
+//
+//
+//        val queue = Volley.newRequestQueue(this)
+//        val endpoint = "https://api.themoviedb.org/3/movie/top_rated?api_key=3e7ab9723e9ad4ef5a4424fb8dbdc2d7&language=en-US"
+//
+//        val stringRequest = StringRequest(endpoint,
+//            object : Response.Listener<String> {
+//                override fun onResponse(response: String?) {
+//                    val jsonResponse = Gson().fromJson(response, JsonResponse::class.java)
+//                    Log.d("API", response.toString())
+//                }
+//            }, object : Response.ErrorListener {
+//                override fun onErrorResponse(error: VolleyError?) {
+//                    Log.e("API", error?.message ?: "")
+//                }
+//
+//            })
+//
+//        queue.add(stringRequest)
+//
+//    }
 
 
-        val queue = Volley.newRequestQueue(this)
-        val endpoint = "https://api.themoviedb.org/3/movie/top_rated?api_key=3e7ab9723e9ad4ef5a4424fb8dbdc2d7&language=en-US"
 
-        val stringRequest = StringRequest(endpoint,
-            object : Response.Listener<String> {
-                override fun onResponse(response: String?) {
-                    val jsonResponse = Gson().fromJson(response, JsonResponse::class.java)
-                    Log.d("API", response.toString())
-                }
-            }, object : Response.ErrorListener {
-                override fun onErrorResponse(error: VolleyError?) {
-                    Log.e("API", error?.message ?: "")
-                }
-
-            })
-
-        queue.add(stringRequest)
-
-    }
 }

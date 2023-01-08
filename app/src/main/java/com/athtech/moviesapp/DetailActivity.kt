@@ -30,14 +30,15 @@ class DetailActivity : AppCompatActivity() {
         val mRelease = bundle.getString("release_date")
         val mPoster = bundle.getString("poster_image")
 
+        val result = mCasting?.trim('[',']')
+
         Glide.with(this).load(mBackdrop).into(imageView)
         Glide.with(this).load(mPoster).into(imageView2)
         rating_tv.text = mRating + "/10"
         title_tv.text = mTitle
         overview_tv.text = mOverView
-        casting_tv.text = mCasting
         release_tv.text = mRelease
-
+        casting_tv.text = result
 
     }
 

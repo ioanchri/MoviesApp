@@ -20,18 +20,17 @@
             tools:src="@drawable/ic_launcher_background" />
 
 
-
         <TextView
             android:id="@+id/mTitle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="Title of movie"
             android:fontFamily="@font/shadows_into_light_two"
+            android:text="Title of movie"
             android:textAlignment="center"
             android:textColor="@color/title"
-            android:textSize="25sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <TextView
@@ -42,9 +41,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:text="Release date"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textColor="@color/white"
+            android:textColor="@color/title"
             android:textSize="20sp" />
 
         <TextView
@@ -54,10 +51,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:text="20-11-22"
-            android:textAlignment="center"
-            android:textColor="@color/title"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textColor="@color/detail_text"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/Rating"
@@ -67,9 +62,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:text="Rating"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textColor="@color/white"
+            android:textColor="@color/title"
             android:textSize="20sp" />
 
         <TextView
@@ -79,35 +72,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:text="5 stars"
-            android:textAlignment="center"
-            android:textColor="@color/title"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/Casting"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:text="Casting"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textColor="@color/white"
+            android:textColor="@color/detail_text"
             android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/mCasting"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:text="actor 1 actor 2"
-            android:textAlignment="center"
-            android:textColor="@color/title"
-            android:textSize="20sp"
-            />
 
         <TextView
             android:id="@+id/Overview"
@@ -117,10 +83,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:paddingBottom="5dp"
-            android:text="Description"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textColor="@color/white"
+            android:text="Plot summary"
+            android:textColor="@color/title"
             android:textSize="20sp" />
 
         <TextView
@@ -129,10 +93,32 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:paddingBottom="10dp"
             android:text="Blablablablabla"
+            android:textColor="@color/detail_text"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/Casting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:text="Casting"
             android:textColor="@color/title"
-            android:textSize="20sp"
-            android:paddingBottom="10dp"/>
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/mCasting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="actor 1 actor 2"
+            android:textColor="@color/detail_text"
+            android:textSize="20sp" />
+
 
         <Space
             android:layout_width="match_parent"
@@ -142,12 +128,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingBottom="5dp"
-            android:text="poster image"
+            android:text="Cover Image"
             android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textColor="@color/title"
+            android:textSize="20sp" />
 
         <ImageView
             android:id="@+id/mBackdrop"

@@ -1,7 +1,6 @@
 package com.athtech.moviesapp.json
 
 
-
 class JsonEntryResponse {
 
     var id: Number = 0
@@ -11,8 +10,6 @@ class JsonEntryResponse {
     var vote_average: Number = 0
     var overview: String = ""
     var poster_path: String = ""
- //   var original_name: String = ""
-
 }
 
 class JsonCastingResponse {

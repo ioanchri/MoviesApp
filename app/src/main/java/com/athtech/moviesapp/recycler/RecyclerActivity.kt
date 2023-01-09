@@ -28,18 +28,19 @@ class RecyclerActivity : AppCompatActivity() {
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
 
+
         val searchView = findViewById<SearchView>(R.id.search_view)
         searchView.clearFocus()
-        searchView.setOnSearchClickListener {}
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String): Boolean {
-                searchMovies(query)
-                return true
+            override fun onQueryTextSubmit(newText: String): Boolean {
+                searchMovies(newText)
+
+                return false
             }
 
-            override fun onQueryTextChange(newText: String): Boolean {
-                searchMovies(newText)
+            override fun onQueryTextChange(query: String): Boolean {
+                searchMovies(query)
                 return true
             }
         })
@@ -47,37 +48,54 @@ class RecyclerActivity : AppCompatActivity() {
     }
 
     fun searchMovies(query: String) {
-        val queue = Volley.newRequestQueue(this)
-        val SearchUrl =
-            "https://api.themoviedb.org/3/search/movie?api_key=3e7ab9723e9ad4ef5a4424fb8dbdc2d7&language=en-US&query=$query&page=1&include_adult=false"
 
-        val searchRequest = StringRequest(SearchUrl, { response ->
-            // Parse the response and update the list of movies
-            val jsonResponse = Gson().fromJson(response, JsonResponse::class.java)
-            val movies = jsonResponse.results
-            // Update the adapter with the new list of movies
-            // Create a new list of movies that only includes the movies that match the search query
-            val filteredMovies =
-                movies.filter { movie -> movie.title.contains(query, ignoreCase = true) }
 
-        }, { error ->
-            // Handle error
-        })
-        queue.add(searchRequest)
+//        val queue = Volley.newRequestQueue(this)
+//        val SearchUrl =
+//            "https://api.themoviedb.org/3/search/movie?api_key=3e7ab9723e9ad4ef5a4424fb8dbdc2d7&language=en-US&query=$query&page=1&include_adult=false"
+//        Toast.makeText(
+//            this@RecyclerActivity, query, Toast.LENGTH_SHORT
+//        ).show()
+//
+//        val searchRequest = StringRequest(SearchUrl, { response ->
+//            // Parse the response and update the list of movies
+//            val jsonResponse = Gson().fromJson(response, JsonResponse::class.java)
+//            val movies = jsonResponse.results
+//            // Create a new list of movies that only includes the movies that match the search query
+//
+//            val filteredListData = movies.map { movie ->
+//
+//                // Convert the Movie object to a ListData object
+//                val mutableList = mutableListOf<String>()
+//                ListData(
+//                    movieTitle = movie.title,
+//                    movieId = movie.id.toString(),
+//                    movieOverview = movie.overview,
+//                    movieRelease = movie.release_date,
+//                    movieRating = movie.vote_average.toString(),
+//                    movieBackdrop = movie.backdrop_path,
+//                    moviePoster = movie.poster_path,
+//                    movieCasting = mutableList
+//                )
+//            }.filter { listData ->
+//                listData.movieTitle.contains(query, ignoreCase = true)
+//            }
+//        }, { error ->
+//            Toast.makeText(this@RecyclerActivity, "Error: ${error?.message}", Toast.LENGTH_LONG)
+//                .show()        })
+//        queue.add(searchRequest)
     }
 
 
     override fun onPostResume() {
         super.onPostResume()
-
-
         val queue = Volley.newRequestQueue(this)
         val UrlMovies =
             "https://api.themoviedb.org/3/movie/popular?api_key=3e7ab9723e9ad4ef5a4424fb8dbdc2d7&language=en-US"
-        //  "https://api.themoviedb.org/3/movie/top_rated?api_key=3e7ab9723e9ad4ef5a4424fb8dbdc2d7&language=en-US"
 
         val UrlPhotos = "https://themoviedb.org/t/p/w342"
 
+        // Make a request to the first API to get the most popular movies
 
         val firstRequest = StringRequest(UrlMovies, object : Response.Listener<String> {
 
@@ -105,11 +123,9 @@ class RecyclerActivity : AppCompatActivity() {
                                     )
                                     dataList2.add(row2)
                                 }
+                                //Add the casting actors of each movie in a list
 
                                 dataList2.forEach { list2.add(it.movieCasting) }
-
-
-                                println(" Data List 2 " + dataList2[0].movieCasting + dataList2[1].movieCasting)
                             }
                         }, object : Response.ErrorListener {
                             override fun onErrorResponse(error: VolleyError?) {
@@ -139,8 +155,7 @@ class RecyclerActivity : AppCompatActivity() {
                 }
 
                 var recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
-                recyclerView.adapter = RecyclerAdapterWithListData(
-                    this@RecyclerActivity,
+                recyclerView.adapter = RecyclerAdapterWithListData(this@RecyclerActivity,
                     dataList,
                     object : OnItemClickListener {
                         override fun onClick(data: ListData) {
@@ -164,7 +179,6 @@ class RecyclerActivity : AppCompatActivity() {
 
         }, object : Response.ErrorListener {
             override fun onErrorResponse(error: VolleyError?) {
-                Log.e("API", error?.message ?: "No Internet Connection!")
                 Toast.makeText(this@RecyclerActivity, "Error: ${error?.message}", Toast.LENGTH_LONG)
                     .show()
             }

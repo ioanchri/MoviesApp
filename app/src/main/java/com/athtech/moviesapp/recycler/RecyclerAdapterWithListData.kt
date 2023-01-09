@@ -16,8 +16,6 @@ class RecyclerAdapterWithListData : RecyclerView.Adapter<RecyclerHolderWithListD
     private val inflater: LayoutInflater
 
 
-
-
     constructor(context: Context, dataList: List<ListData>, listener: OnItemClickListener) {
         this.dataList = dataList
         this.context = context
@@ -31,7 +29,6 @@ class RecyclerAdapterWithListData : RecyclerView.Adapter<RecyclerHolderWithListD
     }
 
     override fun onBindViewHolder(holder: RecyclerHolderWithListData, position: Int) {
-
         holder.bind(dataList.get(position), listener)
     }
 
@@ -39,7 +36,6 @@ class RecyclerAdapterWithListData : RecyclerView.Adapter<RecyclerHolderWithListD
     override fun getItemCount(): Int {
         return dataList.size
     }
-
 
 
 }

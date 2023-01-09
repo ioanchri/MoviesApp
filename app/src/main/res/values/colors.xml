@@ -7,8 +7,14 @@
     <color name="teal_700">#143B5A</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="holder">#2C3149</color>
-    <color name="title">#D3623E</color>
+    <color name="holder">#090A0E</color>
+    <color name="title">#D6AA25</color>
+    <color name="detail_text">#BEBBB9</color>
+    <color name="holder_text">#0E0F14</color>
+
+
+
+
 
 
 </resources>

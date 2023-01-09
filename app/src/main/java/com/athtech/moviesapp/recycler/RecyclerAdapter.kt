@@ -8,13 +8,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.athtech.moviesapp.R
 
-class  RecyclerAdapter : RecyclerView.Adapter<RecyclerHolder> {
+class RecyclerAdapter : RecyclerView.Adapter<RecyclerHolder> {
 
 
     private var dataList: List<String>
     private var context: Context
 
-    constructor(context: Context,dataList: List<String>) {
+    constructor(context: Context, dataList: List<String>) {
         this.dataList = dataList
         this.context = context
     }

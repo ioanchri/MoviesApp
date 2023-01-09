@@ -1,10 +1,13 @@
 package com.athtech.moviesapp.recycler
 
 import android.content.Intent
+import android.graphics.Color.BLACK
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Response
 import com.android.volley.VolleyError
@@ -12,15 +15,21 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.athtech.moviesapp.DetailActivity
 import com.athtech.moviesapp.R
+import com.athtech.moviesapp.json.JsonCasting2
 import com.athtech.moviesapp.json.JsonResponse
 import com.athtech.moviesapp.recycler.ListData.ListData2
+import com.google.android.material.snackbar.Snackbar
 import com.google.gson.Gson
-import androidx.appcompat.widget.SearchView
-import com.athtech.moviesapp.json.JsonCasting2
 
 
 class RecyclerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        val actionBar: ActionBar? = supportActionBar
+
+        if (actionBar != null) {
+            actionBar.hide()
+        }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler)
     }
@@ -49,16 +58,20 @@ class RecyclerActivity : AppCompatActivity() {
 
     fun searchMovies(query: String) {
 
-
 //        val queue = Volley.newRequestQueue(this)
 //        val SearchUrl =
 //            "https://api.themoviedb.org/3/search/movie?api_key=3e7ab9723e9ad4ef5a4424fb8dbdc2d7&language=en-US&query=$query&page=1&include_adult=false"
-//        Toast.makeText(
-//            this@RecyclerActivity, query, Toast.LENGTH_SHORT
-//        ).show()
-//
+
+
+        val snackbar = Snackbar.make(
+            findViewById(R.id.recyclerView),
+            "We are sorry but the Search function isn't implemented yet. You searched for: $query",
+            Snackbar.LENGTH_SHORT
+        ).setBackgroundTint(BLACK)
+        snackbar.show()
+
+
 //        val searchRequest = StringRequest(SearchUrl, { response ->
-//            // Parse the response and update the list of movies
 //            val jsonResponse = Gson().fromJson(response, JsonResponse::class.java)
 //            val movies = jsonResponse.results
 //            // Create a new list of movies that only includes the movies that match the search query
@@ -90,6 +103,8 @@ class RecyclerActivity : AppCompatActivity() {
     override fun onPostResume() {
         super.onPostResume()
         val queue = Volley.newRequestQueue(this)
+
+
         val UrlMovies =
             "https://api.themoviedb.org/3/movie/popular?api_key=3e7ab9723e9ad4ef5a4424fb8dbdc2d7&language=en-US"
 
@@ -155,7 +170,8 @@ class RecyclerActivity : AppCompatActivity() {
                 }
 
                 var recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
-                recyclerView.adapter = RecyclerAdapterWithListData(this@RecyclerActivity,
+                recyclerView.adapter = RecyclerAdapterWithListData(
+                    this@RecyclerActivity,
                     dataList,
                     object : OnItemClickListener {
                         override fun onClick(data: ListData) {

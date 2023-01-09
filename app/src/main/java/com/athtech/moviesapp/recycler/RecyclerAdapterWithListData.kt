@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.athtech.moviesapp.R
 
+
 class RecyclerAdapterWithListData : RecyclerView.Adapter<RecyclerHolderWithListData> {
 
 

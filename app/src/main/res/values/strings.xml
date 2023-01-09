@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">MoviesApp</string>
+<string name="lorem">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco anim id est laborum</string>
+    <string name="movie_title">Title of movie</string>
+    <string name="movie_release">20-11-22</string>
+    <string name="movie_casting">Casting</string>
+    <string name="movie_overview">Plot summary</string>
+    <string name="movie_poster">Cover Image</string>
+    <string name="movie_list">Movies List</string>
+
+
+
+
+
+
+
 
 </resources>

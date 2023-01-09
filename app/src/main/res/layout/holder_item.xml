@@ -2,20 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/holder_container"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:layout_marginBottom="2dp"
+    android:layout_height="@dimen/layout_height"
+    android:layout_marginBottom="@dimen/margin_2"
     android:background="@android:color/transparent"
     android:clickable="true"
     android:orientation="horizontal">
 
     <ImageView
         android:id="@+id/holder_img"
-        android:layout_width="140dp"
+        android:layout_width="@dimen/layout_width"
         android:layout_height="match_parent"
         android:src="@mipmap/ic_launcher" />
 
     <Space
-        android:layout_width="5dp"
+        android:layout_width="@dimen/padding_small"
         android:layout_height="match_parent" />
 
     <LinearLayout
@@ -32,43 +32,43 @@
             android:gravity="center"
             android:text="@string/app_name"
             android:textColor="@color/holder"
-            android:textSize="20sp" />
+            android:textSize="@dimen/text_size" />
 
         <TextView
             android:id="@+id/holder_rating"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="@dimen/layout_height_2"
             android:layout_weight="1"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/app_name"
             android:textColor="@color/holder_text"
-            android:textSize="15sp" />
+            android:textSize="@dimen/text_size_2" />
 
         <TextView
             android:id="@+id/holder_release"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="@dimen/layout_height_2"
             android:layout_weight="1"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/app_name"
             android:textColor="@color/holder_text"
-            android:textSize="15sp" />
+            android:textSize="@dimen/text_size_2" />
 
 
         <TextView
             android:id="@+id/holder_overview"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="@dimen/layout_height"
             android:layout_weight="1"
             android:ellipsize="end"
             android:fontFamily="sans-serif-condensed-medium"
             android:maxLines="4"
-            android:text="blaasdljsadjhasdkasghdkashdksahdoashdosahdoashdoashdasdhasodhasodhsaodhasodihasodhasodhasodiashdoisahjdshfsdhfosdhfosdhflos"
+            android:text="@string/lorem"
             android:textColor="@color/holder_text"
-            android:textSize="15sp" />
+            android:textSize="@dimen/text_size_2" />
         <Space
             android:layout_width="match_parent"
-            android:layout_height="5dp" />
+            android:layout_height="@dimen/padding_small" />
     </LinearLayout>
 
 

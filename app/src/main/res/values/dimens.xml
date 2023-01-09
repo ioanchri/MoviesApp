@@ -2,4 +2,29 @@
 <resources>
     <dimen name="corner_space">16dp</dimen>
     <dimen name="default_padding_space">16dp</dimen>
+    <dimen name="margin_horizontal_big">30dp</dimen>
+    <dimen name="title_size">30sp</dimen>
+    <dimen name="text_size">20sp</dimen>
+    <dimen name="text_size_2">15sp</dimen>
+    <dimen name="margin_horizontal_medium">20dp</dimen>
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="padding_small">5dp</dimen>
+    <dimen name="margin_smaller">8dp</dimen>
+    <dimen name="height_1">1dp</dimen>
+    <dimen name="layout_height">200dp</dimen>
+    <dimen name="margin_2">2dp</dimen>
+    <dimen name="layout_width">140dp</dimen>
+    <dimen name="layout_height_2">150dp</dimen>
+
+
+
+
+
+
+
+
+
+
+
+
 </resources>

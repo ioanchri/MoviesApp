@@ -7,8 +7,12 @@
 <!--    </shape>-->
 
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-<gradient
-    android:startColor="#DF901B"
-    android:endColor="#BC4F59"
-    android:angle="50"/>
+
+    <gradient
+        android:startColor="#FFFFFF"
+        android:endColor="#937004"
+        android:angle="50"/>
 </shape>
+
+
+<!--// 957609 E3C56B-->
